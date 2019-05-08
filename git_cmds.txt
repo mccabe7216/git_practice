@@ -1,11 +1,14 @@
 git status //shows changes to be committed, not staged for commit, and untracked
 git add filename //moves file from working directory to staging area
+	git add * //wildcard
+	git add . //adds all files
 git diff filename //shows difference between file in working directory and staging area
 git commit filename -m "message" //moves file from staging area to repository
 git commit -m "message" //moves all files from staging area to repository
 	git commit scene* //asterix is a wildcard and will pull scene-3.txt and scene-7.txt
 git log //shows history of commits
 git show HEAD //shows most recent commit
+	HEAD commit is the commit you are currently on
 git checkout HEAD filename //Discards changes in the working directory. Replaces with HEAD version.
 git reset HEAD filename //Unstages file changes in the staging area. Changes remain in working directory.
 git reset 5d69206 //This command works by using the first 7 characters of the SHA of a previous commit. HEAD is now set to that previous commit. Your working directory, however, does not change
@@ -14,3 +17,5 @@ git reset 5d69206 //This command works by using the first 7 characters of the SH
 q - quit 
 git remote add origin https://github.com/mccabe7216/test1.git
 git push -u origin master
+
+git branch //tells you what branch you are on

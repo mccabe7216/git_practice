@@ -11,11 +11,28 @@ git show HEAD //shows most recent commit
 	HEAD commit is the commit you are currently on
 git checkout HEAD filename //Discards changes in the working directory. Replaces with HEAD version.
 git reset HEAD filename //Unstages file changes in the staging area. Changes remain in working directory.
-git reset 5d69206 //This command works by using the first 7 characters of the SHA of a previous commit. HEAD is now set to that previous commit. Your working directory, however, does not change
+git reset 5d69206 //This command works by using the first 7 characters of the SHA of a previous commit. HEAD is now set to that previous commit. Your staging area is also updated to that previous commit. Your working directory, however, does not change
+
+
+
+git branch //lists the branches; asterix by the one you are on
+git branch new_branch_name //create new branch
+git checkout branch_name //switch to branch of choice
+git merge giver_branch_name //checkout the receiver branch then run this command to merge the givver branch into the receiever branch
+	"fast-forward": git recognizes that the giver branch contains the most recent commit
+	"merge conflict": when edits conflict and auto-merging cannot occur; must go into file and resolve merge conflict manually. then add/commit the change.
+git branch -d branch_name //delete branch
+
 
 
 q - quit 
 git remote add origin https://github.com/mccabe7216/test1.git
 git push -u origin master
 
-git branch //tells you what branch you are on
+git clone remote_location clone_name //create your own replica of a remote repository
+	"remote_location": tells Git where to go to find the remote. This could be a web address, or a filepath
+	"clone_name": the name you give to the directory in which Git will clone the repository.
+	When you run this cmd, git gives the remote address the name origin, so that you can refer easily
+git remote -v //lists git project remotes
+git fetch //This command will not merge changes from the remote into your local repository. It brings those changes onto what’s called a remote branch. Learn more about how this works below.
+git push origin giver_branch //pushes your branch to the remote where it can be reviewed and merged
